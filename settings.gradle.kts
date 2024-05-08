@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "bugabooAppPong"
 include(":app")
- 
+include(":app:mylibrary")
+include(":core")

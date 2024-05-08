@@ -15,9 +15,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -51,6 +53,13 @@ android {
 
 dependencies {
 
+    val lifecycle_version ="2.6.2"
+    val retrofit_version ="2.9.0"
+    val coroutine_version="1.7.3"
+    val room_version = "2.6.1"
+    val koin_version="3.4.0"
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -59,6 +68,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +77,26 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Koin
+    implementation ("io.insert-koin:koin-android:$koin_version")
+    implementation ("io.insert-koin:koin-androidx-compose:$koin_version")
+
+
+    // okhttp
+    implementation ("com.google.code.gson:gson:2.8.6")
+    implementation ("com.squareup.okhttp3:okhttp:3.12.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:3.11.0")
+
+    // kotlin based dependency injection koin
+//    implementation ("org.koin:koin-androidx-viewmodel:$koin_version")
+//    implementation ("org.koin:koin-android:$koin_version")
+//    implementation ("org.koin:koin-androidx-scope:$koin_version")
+
+    // retrofit
+    implementation ("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.4.0")
+    implementation ("com.squareup.retrofit2:converter-scalars:2.3.0")
+
 }
